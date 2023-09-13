@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ruby
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ruby
+  template:
+    metadata:
+      name: ruby
+      labels:
+        app: ruby
+    spec:
+      containers:
+        - name: ruby
+          image: shankar123321/ruby-image:latest
+          ports:
+            - containerPort: 3000
