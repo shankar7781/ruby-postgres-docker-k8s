@@ -35,4 +35,19 @@ ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
+
+
+ENV RAILS_ENV=production
+ENV POSTGRES_HOST=postgres
+ENV POSTGRES_DB=videodb_production
+ENV POSTGRES_USER=dean
+ENV POSTGRES_PASSWORD=password123
+ENV RAILS_MASTER_KEY=8af814b3e08d9e263c6635f231fc541f
+
+# Define a volume for app storage
+VOLUME /rails/storage
+
+# Start your Rails application
+
+
 CMD ["./bin/rails", "server"]

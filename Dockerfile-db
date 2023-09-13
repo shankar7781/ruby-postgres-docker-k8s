@@ -1,0 +1,9 @@
+FROM postgres:14.2-alpine
+
+# Set the PostgreSQL environment variables
+ENV POSTGRES_DB=videodb_production
+ENV POSTGRES_USER=dean
+ENV POSTGRES_PASSWORD=password123
+
+# Expose the PostgreSQL port
+EXPOSE 5432
